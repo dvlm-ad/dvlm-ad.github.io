@@ -1,2 +1,2 @@
-# dvlm-ad.github.io
-dVLM-AD,adiffusion-basedvision–language  model thatunifiesperception, structuredreasoning, and  low-levelplanningforend-to-enddriving.
+# dVLM-AD
+A diffusion-based vision–language  model that unifies perception, structured reasoning, and  low-level planning for end-to-end driving.
