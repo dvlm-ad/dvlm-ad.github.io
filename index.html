@@ -191,15 +191,21 @@
 
       <div class="content has-text-justified">
         <p class="is-size-5">
-          <em><b>SafeVL</b></em> performs structured, interpretable reasoning over real and counterfactual driving
-          scenarios to evaluate safety in autonomous driving. The framework first employs a
-          <b>Road-Graph Counterfactual Data Generation Engine</b> that perturbs agent actions such as acceleration
-          and lane changes to synthesize diverse unsafe outcomes. This process expands the range of rare yet
-          critical collision-prone scenarios. Then, an <b>Object-centric Visual Reasoning Framework</b> processes
-          each driving video through four stages: (S1) scene understanding, (S2) key object detection, (S3) behavior
-          prediction for ego and surrounding agents, and (S4) safety analysis. By aligning safe trajectories with
-          their counterfactual unsafe variants under the same reasoning pipeline, SafeVL learns to identify and
-          explain high-risk events before collisions occur, producing transparent and reliable Safe/Unsafe decisions.
+          ⚙️ <b>Unified Diffusion-based Planner</b><br>
+          <b><i>d</i>VLM-AD</b> starts from a structured chain-of-thought template that includes critical objects, causal explanations, future meta behavior, and a sequence of waypoints.  
+          Instead of left-to-right decoding, a diffusion denoiser iteratively refines all reasoning and action tokens jointly, conditioned on multi-camera views, navigation commands, and ego state.
+        </p>
+      
+        <p class="is-size-5" style="margin-top: 1rem;">
+          🧩 <b>Controllable Structured Reasoning</b><br>
+          During decoding, only editable slots in the template are masked and updated, so the schema itself enforces safety and format constraints.  
+          A dynamic denoise strategy with a special <em>reduce</em> token allows variable-length phrases inside fixed windows, avoiding length-matching bias and preserving semantic consistency between behavior and trajectory.
+        </p>
+      
+        <p class="is-size-5" style="margin-top: 1rem;">
+          🪜 <b>Two Training Stages</b><br>
+          Stage I aligns the diffusion backbone to the driving domain using about 145k driving-related QA pairs from existing datasets, grounding perception and prediction in realistic scenes.  
+          Stage II supervises structured reasoning–action pairs on nuScenes and WOD-E2E (23k + 30k samples), so that object detection, explanations, meta behaviors, and trajectories are learned to stay consistent.
         </p>
       </div>
     </div>
