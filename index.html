@@ -30,44 +30,65 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 
-  <style>
-    /* Base font */
-    body { font-size: 0.85rem; }
+ <style>
+  /* Base font */
+  body { font-size: 0.85rem; }
 
-    /* Clear hierarchy */
-    h1.title.is-1.publication-title { font-size: 2.3rem; }
-    h2.title.is-3.has-text-centered { font-size: 1.8rem; margin-bottom: .6rem; }
-    h3.subtitle.is-size-4-tablet    { font-size: 0.85rem; }
-    h4.title.is-4.has-text-centered { font-size: 1.3rem; }
+  /* Clear hierarchy */
+  h1.title.is-1.publication-title { font-size: 2.3rem; }
+  h2.title.is-3.has-text-centered { font-size: 1.8rem; margin-bottom: .6rem; }
+  h3.subtitle.is-size-4-tablet    { font-size: 0.85rem; }
+  h4.title.is-4.has-text-centered { font-size: 1.3rem; }
 
+  /* Paragraph & code */
+  p.is-size-5,
+  .content p {
+    font-size: 1.05rem; /* force override */
+    line-height: 1.45;
+    font-family: "Calibri", "Arial", sans-serif;
+  }
+  pre code { font-size: 0.7rem; }
 
+  /* Layout width */
+  .container.is-max-desktop { max-width: 900px; }
 
-    /* Paragraph & code */
-     p.is-size-5, .content p {
-      font-size: 1.05rem; /* force override */
-      line-height: 1.45;
-      font-family: "Calibri", "Arial", sans-serif;
-    }
-    pre code                { font-size: 0.7rem; }
+  hr.section-divider {
+    margin: .4rem 0 1.2rem 0;
+    border: none;
+    height: 1px;
+    background: #e0e0e0;
+  }
 
-    /* Layout width */
-    .container.is-max-desktop { max-width: 900px; }
+  /* Carousel base: avoid前后 item 互相遮挡 */
+  .results-carousel {
+    overflow: hidden;
+  }
 
-    hr.section-divider { margin: .4rem 0 1.2rem 0; border: none; height: 1px; background: #e0e0e0; }
+  .results-carousel .item {
+    margin: 5px;
+    padding: 20px;
+    height: auto;
+    overflow: hidden;
+    font-size: initial;
+  }
 
-    .results-carousel {
-      overflow: hidden;
-    }
-    
-    .results-carousel .item {
-      margin: 5px;
-      padding: 20px;
-      height: auto;
-      overflow: hidden;     /* 关键改这里 */
-      font-size: initial;
-    }
+  /* Demonstration section: smaller titles & descriptions */
+  #demo-carousel h2.subtitle {
+    font-size: 1.2rem;
+  }
 
-  </style>
+  #demo-carousel h3.subtitle {
+    font-size: 1.0rem;
+  }
+
+  /* Demonstration images:缩小并居中 */
+  #demo-carousel #dialog-container img {
+    max-width: 80%;   /* 想更小可以改 70% / 60% */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
 </head>
 <body>
 
